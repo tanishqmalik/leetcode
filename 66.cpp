@@ -1,36 +1,44 @@
+// plus one
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main(){
-    int arr[1000];
+    vector <int> arr;
     int limit;
     cin>>limit;
-    int i,j,n;
+    int num1;
+    int i;
 
     for(i=0; i<limit; i++){
-        cin>>arr[i];
+        cin>>num1;
+        arr.push_back(num1);
     }
 
+    int n = arr.size();
 
-    for(i=limit-1; i>=0; i--){
-        if(arr[i]!=9){
-            arr[i]++;
-            break;
+    int lastele = arr[n-1];
+
+    arr.erase(arr.end()-1);
+
+    lastele+=1;
+
+    arr.push_back(lastele);
+
+
+
+
+    for(i=0; i<n; i++){
+        if(arr[i]>9){
+            while(arr[i]!=0){
+                int ans =arr[i];
+                int mod= ans%10;
+                ans = ans/10;
+                arr.push_back(mod);
+                cout<<arr[i]<<" ";
+            }
         }
-        else{
-            arr[i]=0;
-        }
+        cout<<arr[i]<<" ";
     }
-
-    int arr2[100];
-
-    if(arr[0]==0){
-        arr2[0]=1;
-        for(i=1; i<=limit; i++){
-            arr2[i]=arr[i-1];
-        }
-    }
-    for(i=0; i<limit+1; i++){
-        cout<<arr2[i]<<" ";
-    }
+    
 }
