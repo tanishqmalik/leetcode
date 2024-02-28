@@ -1,3 +1,6 @@
+// brute 
+
+
 #include <iostream>
 using namespace std;
 #include <vector>
@@ -20,17 +23,14 @@ int main(){
     int index=0;
 
 
-
+// jo 0 nahi hai unko push krwaya
     for(int i=0; i<n; i++){
         if(nums[i]!=0){
-            index++;
             nums1.push_back(nums[i]);
         }
     }
 
-
-
-
+// uske baad jo zero hai, unko push krwaya
     for(int i=0; i<n; i++){
         if(nums[i]==0){
             nums1.push_back(nums[i]);
@@ -42,6 +42,18 @@ int main(){
     }
     cout<<endl;
 
+    // to delete
+    
+    // while (!nums1.empty()) {
+    //     nums1.pop_back();
+    // }
+    // for(int i = 0; i<nums1.size(); i++){
+    //     cout<<nums1[i]<<" ";
+    // }
+
+
 
     
 }
+
+// by own
