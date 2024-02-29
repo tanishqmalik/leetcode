@@ -26,24 +26,37 @@ int main(){
         nums.pop_back();
     }
 
-    // sort(temp.begin(), temp.end());
+
+
+    sort(temp.begin(), temp.end()); //sort kia
+
+    
+
 
     int tempkasize= temp.size();
 
+
+
     int loopcnt = tempkasize/2; 
 
+    cout<<"temp"<<endl;
+    for(int i=0; i<n; i++){
+        cout<<temp[i]<<" ";
+    }
+
     for(int i=0; i<loopcnt; i++){
-        sort(temp.begin(), temp.end()); //sort kia
+
+        
+        
+
+        nums.push_back(temp[1]); //pehle do elements ko push krwaya 
+        nums.push_back(temp[0]);    
 
 
-        nums.push_back(*temp.begin()+1);
-        nums.push_back(*temp.begin());    //pehle do elements ko push krwaya 
-
-
-        temp.erase(temp.begin()+1);
+        temp.erase(temp.begin());
         temp.erase(temp.begin());      //pehle do elements ko remove krwaya....
 
-        // cout<<temp.size()<<endl;
+        cout<<temp.size()<<endl;
     }
 
 
@@ -51,8 +64,6 @@ int main(){
         cout<<nums[i]<<" ";
     }
     cout<<endl;
-
-
 
 }
 
